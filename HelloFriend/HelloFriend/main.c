@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "myHeader.h"
+#include "myFileWriter.h"
 
 
 void loop(int loops) {
@@ -30,5 +31,11 @@ int main(){
     int x = sum(a, b);
     printf("My name is %s\n",name());
     loop(x);
+    FILE* file;
+    file= makeFile("myTest");
+    writeToFile(file, "Hello This is my test file.\nMy Name is Cybergoose!\n");
+    closeFile(file);
+    file= appendToFile("myTest", "Just adding some text here\n");
+    closeFile(file);
     return 0;
 }
