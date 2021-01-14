@@ -4,8 +4,13 @@
 #include "myHeader.h"
 #include "myFileWriter.h"
 
+/* hackerrank.com security question */
+#include <string.h>
+#include <math.h>
 
-void loop(int loops) {
+
+
+/*void loop(int loops) {
     if (myConditional(loops)) {
         for (int i = 0; i < loops; i++) {
             printf("Loop %d\n", i);
@@ -37,5 +42,28 @@ int main(){
     closeFile(file);
     file= appendToFile("myTest", "Just adding some text here\n");
     closeFile(file);
+    return 0;
+}*/
+
+int main() {
+    char strin[5];
+    char nstr[] = "";
+    scanf("%5[^\n]", strin);
+
+    for (int i = 0; i < strlen(strin); i++) {
+        int x = strin[i] + 1;
+        if (x > 57) {
+            x -= 10;
+        }
+        char c = x;
+        strin[i] = c;
+        /*printf("%s", &nstr);*/
+        /*printf("%c\n", x);*/
+        /*printf("%c\n", strin[i]);*/
+    }
+    printf("%s", strin);
+    /*printf("%s", nstr);*/
+    /*char *c = s;
+    printf("%c", c);*/
     return 0;
 }
